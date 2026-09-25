@@ -42,4 +42,11 @@ pipeline {
             }
         }
     }
+
+    post {
+        success {
+            echo "6. Archiving Artifacts..."
+            archiveArtifacts artifacts: 'package.json', allowEmptyArchive: true
+        }
+    }
 }
